@@ -31,13 +31,14 @@ class _CustomContainer4State extends State<CustomContainer4> {
       offset: Offset(0, 3),           
         )]
       ),
-      child: Column(
-        children: [
-          Center(child: Image.asset(widget.mobileimage,width: 50, height: 50,)),
-          // Text(widget.name,
-          // style: TextStyle(fontSize: 10),),
-          // Text(widget.price, style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),)
-      ]),
+      child:  Column(
+          children: [
+            Center(child: Image.asset(widget.mobileimage,width: 50, height: 50,)),
+            // Text(widget.name,
+            // style: TextStyle(fontSize: 10),),
+            // Text(widget.price, style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),)
+        ]),
+      
     );
   }
 }

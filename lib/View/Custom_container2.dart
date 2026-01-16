@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:fonify/Core/Theme/app_color.dart';
 
-class CustomContainer2 extends StatefulWidget {
+class PuplarMobileContainer extends StatefulWidget {
    final String mobileimage;
    final String name;
    final String price;
-  const CustomContainer2({super.key,
+  const PuplarMobileContainer({super.key,
    required this.mobileimage,
    required this.name,
    required this.price});
 
   @override
-  State<CustomContainer2> createState() => _CustomContainer2State();
+  State<PuplarMobileContainer> createState() => _PuplarMobileContainerState();
 }
 
-class _CustomContainer2State extends State<CustomContainer2> {
+class _PuplarMobileContainerState extends State<PuplarMobileContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(

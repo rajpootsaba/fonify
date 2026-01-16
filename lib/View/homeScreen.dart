@@ -162,6 +162,21 @@ class HomeScreen extends StatelessWidget {
                           );
                         }),
                       ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton(onPressed: (){
+                            Get.to(() =>Categories());
+                          
+                          },
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(horizontal: 30), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
+                          ),
+                          elevation: 15),
+                           child: Text('View All')),
+                        ],
+                      )
                     ],
                   ),
                 ),
@@ -206,7 +221,7 @@ class HomeScreen extends StatelessWidget {
                             itemCount: companyController.mobileList.length,
                             itemBuilder: (context, index) {
                               final mobile = companyController.mobileList[index];
-                              return CustomContainer2(
+                              return PuplarMobileContainer(
                                 mobileimage: mobile.image,
                                 name: mobile.name,
                                 price: mobile.price,
@@ -215,6 +230,21 @@ class HomeScreen extends StatelessWidget {
                           );
                         }),
                       ),
+                       Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton(onPressed: (){
+                            Get.to(() =>PapularMobiles());
+                          
+                          },
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(horizontal: 30), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
+                          ),
+                          elevation: 15),
+                           child: Text('View All')),
+                        ],
+                      )
                     ],
                   ),
                 ),

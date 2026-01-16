@@ -86,7 +86,12 @@ class _CategoriesState extends State<Categories> {
                 ],
               ),
             ),
-            Expanded(child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, crossAxisSpacing: 5, childAspectRatio: 1.5, mainAxisSpacing: 5),
+            Expanded(child: 
+            
+            
+            GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              
+              crossAxisCount: 4, crossAxisSpacing: 5, childAspectRatio: 1.5, mainAxisSpacing: 5),
             
             itemCount: companyController.logoList.length,
       itemBuilder: (context, index) {
