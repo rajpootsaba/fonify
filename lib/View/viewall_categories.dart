@@ -30,26 +30,26 @@ class _ViewallCategoriesState extends State<ViewallCategories> {
             width: 50,
             fit: BoxFit.contain,),
             SizedBox(width: 10,),
-             SizedBox(
-              width: 280,
-               child: Container(
-                height: 40,
-                // width: 60,
-                decoration: BoxDecoration(
-                  color: AppColors.searchBar,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    prefixIcon: Icon(Icons.search),
-                    suffixIcon: Icon(Icons.keyboard_arrow_down),
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(vertical: 10)
+            Expanded(
+              child: Container(
+                  height: 40,
+                  // width: 60,
+                  decoration: BoxDecoration(
+                    color: AppColors.searchBar,
+                    borderRadius: BorderRadius.circular(5),
                   ),
-                ),
-                           ),
-             ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon: Icon(Icons.search),
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(vertical: 10)
+                    ),
+                  ),
+                             ),
+            ),
+             
              CircleAvatar(
               radius: 20,
               backgroundImage: AssetImage("assets/images/book.jpeg"),
@@ -91,7 +91,7 @@ class _ViewallCategoriesState extends State<ViewallCategories> {
             
             GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               
-              crossAxisCount: 4, crossAxisSpacing: 5, childAspectRatio: 1.5, mainAxisSpacing: 5),
+              crossAxisCount: 4, crossAxisSpacing: 5, childAspectRatio: 1, mainAxisSpacing: 5),
             
             itemCount: companyController.logoList.length,
       itemBuilder: (context, index) {

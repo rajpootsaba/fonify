@@ -128,6 +128,7 @@ class HomeScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               "Categories",
@@ -137,7 +138,22 @@ class HomeScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Spacer(),
+                             Spacer(),
+                           
+                          ElevatedButton(onPressed: (){
+                            Get.to(() =>ViewallCategories());
+                          
+                          },
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(horizontal: 30), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
+                          ),
+                          elevation: 15),
+                           child: Text('View All')),
+                        
+                      
+                            // Spacer(),
+                            SizedBox(width: 10,),
                             InkWell(
                               onTap: () => companyController.scrollLogoLeft(),
                               child: Icon(Icons.arrow_back, size: 20),
@@ -163,21 +179,7 @@ class HomeScreen extends StatelessWidget {
                           );
                         }),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          ElevatedButton(onPressed: (){
-                            Get.to(() =>ViewallCategories());
-                          
-                          },
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
-                          foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(horizontal: 30), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
-                          ),
-                          elevation: 15),
-                           child: Text('View All')),
-                        ],
-                      )
+                     
                     ],
                   ),
                 ),

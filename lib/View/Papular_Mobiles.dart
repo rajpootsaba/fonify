@@ -33,26 +33,26 @@ class _PapularMobilesState extends State<PapularMobiles> {
             width: 50,
             fit: BoxFit.contain,),
             SizedBox(width: 10,),
-             SizedBox(
-              width: 280,
-               child: Container(
-                height: 40,
-                // width: 60,
-                decoration: BoxDecoration(
-                  color: AppColors.searchBar,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search',
-                    prefixIcon: Icon(Icons.search),
-                    suffixIcon: Icon(Icons.keyboard_arrow_down),
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(vertical: 10)
+              Expanded(
+                 child: Container(
+                  height: 40,
+                  // width: 60,
+                  decoration: BoxDecoration(
+                    color: AppColors.searchBar,
+                    borderRadius: BorderRadius.circular(5),
                   ),
-                ),
-                           ),
-             ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search',
+                      prefixIcon: Icon(Icons.search),
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(vertical: 10)
+                    ),
+                  ),
+                             ),
+               ),
+            
              CircleAvatar(
               radius: 20,
               backgroundImage: AssetImage("assets/images/book.jpeg"),
@@ -93,7 +93,7 @@ class _PapularMobilesState extends State<PapularMobiles> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,
                 crossAxisSpacing: 5,
-                childAspectRatio: 0.95,
+                childAspectRatio: 0.6,
                 mainAxisSpacing: 10),
                 itemCount: companyController.mobileList.length,
                 itemBuilder: (context, index){
