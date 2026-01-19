@@ -146,21 +146,21 @@ class HomeScreen extends StatelessWidget {
                           },
                           style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
                           foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(horizontal: 30), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
+                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25),
                           ),
                           elevation: 15),
-                           child: Text('View All')),
+                           child: Text('View All', style: TextStyle(fontSize: 10),)),
                         
                       
                             // Spacer(),
                             SizedBox(width: 10,),
                             InkWell(
                               onTap: () => companyController.scrollLogoLeft(),
-                              child: Icon(Icons.arrow_back, size: 20),
+                              child: Icon(Icons.arrow_back, size: 17),
                             ),
                             InkWell(
                               onTap: () => companyController.scrollLogoRight(),
-                              child: Icon(Icons.arrow_forward, size: 20),
+                              child: Icon(Icons.arrow_forward, size: 17, ),
                             ),
                           ],
                         ),
@@ -204,13 +204,27 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             Spacer(),
+                           
+                          ElevatedButton(onPressed: (){
+                            Get.to(() =>PapularMobiles());
+                          
+                          },
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25),
+                          ),
+                          elevation: 15),
+                           child: Text('View All',style: TextStyle(fontSize: 10),)),
+                      
+                            
+                            SizedBox(width: 10,),
                             InkWell(
                               onTap: () => companyController.scrollMobileLeft(),
-                              child: Icon(Icons.arrow_back, size: 20),
+                              child: Icon(Icons.arrow_back, size: 17),
                             ),
                             InkWell(
                               onTap: () => companyController.scrollMobileRight(),
-                              child: Icon(Icons.arrow_forward, size: 20),
+                              child: Icon(Icons.arrow_forward, size: 17),
                             ),
                           ],
                         ),
@@ -233,21 +247,7 @@ class HomeScreen extends StatelessWidget {
                           );
                         }),
                       ),
-                       Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          ElevatedButton(onPressed: (){
-                            Get.to(() =>PapularMobiles());
-                          
-                          },
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
-                          foregroundColor: Colors.white,
-                          padding: EdgeInsets.symmetric(horizontal: 30), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20),
-                          ),
-                          elevation: 15),
-                           child: Text('View All')),
-                        ],
-                      )
+                      
                     ],
                   ),
                 ),
