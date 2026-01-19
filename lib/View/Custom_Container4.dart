@@ -21,7 +21,7 @@ class _CustomContainer4State extends State<CustomContainer4> {
     return Container(
       width: 70,
       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       decoration: BoxDecoration(
         color: AppColors.customContainer,
         borderRadius: BorderRadius.circular(5),

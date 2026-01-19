@@ -11,6 +11,7 @@ import 'package:fonify/View/cart_page.dart';
 import 'package:fonify/View/categories.dart';
 import 'package:fonify/View/scan_page.dart';
 import 'package:fonify/View/settings_page.dart';
+import 'package:fonify/View/viewall_categories.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -166,7 +167,7 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ElevatedButton(onPressed: (){
-                            Get.to(() =>Categories());
+                            Get.to(() =>ViewallCategories());
                           
                           },
                           style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,

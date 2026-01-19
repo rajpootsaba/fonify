@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fonify/Controller/bottom_nev_controller.dart';
 import 'package:fonify/Controller/company_controller.dart';
 import 'package:fonify/Core/Theme/app_color.dart';
 import 'package:fonify/View/Custom_Container4.dart';
@@ -17,48 +18,6 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: AppColors.background,
-      // appBar: AppBar(
-      //   automaticallyImplyLeading: false,
-      //   toolbarHeight: 50,
-      //   backgroundColor: AppColors.appBar,
-      //   title: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          
-      //     children: [
-      //       Image.asset("assets/images/logo.jpeg",
-      //       height: 70,
-      //       width: 50,
-      //       fit: BoxFit.contain,),
-      //       SizedBox(width: 10,),
-      //        SizedBox(
-      //         width: 280,
-      //          child: Container(
-      //           height: 40,
-      //           // width: 60,
-      //           decoration: BoxDecoration(
-      //             color: AppColors.searchBar,
-      //             borderRadius: BorderRadius.circular(5),
-      //           ),
-      //           child: TextField(
-      //             decoration: InputDecoration(
-      //               hintText: 'Search',
-      //               prefixIcon: Icon(Icons.search),
-      //               suffixIcon: Icon(Icons.keyboard_arrow_down),
-      //               border: InputBorder.none,
-      //               contentPadding: EdgeInsets.symmetric(vertical: 10)
-      //             ),
-      //           ),
-      //                      ),
-      //        ),
-      //        CircleAvatar(
-      //         radius: 20,
-      //         backgroundImage: AssetImage("assets/images/book.jpeg"),
-      //        )
-           
-
-      //     ],
-      //   )
-      // ),
       body: Obx((){
         return Column(
           children: [
@@ -69,7 +28,7 @@ class _CategoriesState extends State<Categories> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.back();
+                      Get.find<BottomNavController>().changeIndex(0);
                     },
                     child: Container(
                       height: 25,
@@ -91,7 +50,7 @@ class _CategoriesState extends State<Categories> {
             
             GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               
-              crossAxisCount: 4, crossAxisSpacing: 5, childAspectRatio: 1.5, mainAxisSpacing: 5),
+              crossAxisCount: 4, crossAxisSpacing: 5, childAspectRatio: 1, mainAxisSpacing: 5),
             
             itemCount: companyController.logoList.length,
       itemBuilder: (context, index) {
