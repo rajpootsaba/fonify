@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fonify/Core/Data/company_names.dart';
 import 'package:fonify/Core/Data/MobileImages.dart';
+import 'package:fonify/Core/Data/review_data.dart';
 import 'package:fonify/Model/company_model.dart';
+import 'package:fonify/Model/review_model.dart';
 import 'package:get/get.dart';
 
 class CompanyController extends GetxController {
-  var logoList = <String>[].obs;        // Upar ke logos
-  var mobileList = <CompanyModel>[].obs;    // Neeche ke mobiles
+  var logoList = <String>[].obs;        
+  var mobileList = <CompanyModel>[].obs;
+  // RxList<ReviewModel> reviews = <ReviewModel>[].obs;    
 
   final ScrollController logoScrollController = ScrollController();
   final ScrollController mobileScrollController = ScrollController();
@@ -58,4 +61,12 @@ class CompanyController extends GetxController {
     logoList.assignAll(CompanyNames.companies.map((e) => e.image));
     mobileList.assignAll(MobileImages.mobiles);
   }
+  // @override void oninit(){
+  //   super.onInit();
+  //   reviews.assignAll(localReviews);
+  // }
+  // // future main sirf ye method use hoga
+  // void fetchOnlineReviews() async{
+  //   //reviews.assignAll(apiReviews);
+  // }
 }

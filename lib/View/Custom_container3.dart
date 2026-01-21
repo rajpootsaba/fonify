@@ -32,17 +32,21 @@ class _CustomContainer3State extends State<CustomContainer3> {
       ),
       child: Column(
         children: [
-          Container(
-            height: 110,
-            width: 150,
-            decoration: BoxDecoration(
-              color: Colors.amber
-            ),
-            child: Image.asset(widget.mobileimage, fit: BoxFit.cover,)),
-          SizedBox(height: 5,),
+          Center(
+            child: Container(
+              // padding: EdgeInsets.symmetric(vertical: 10),
+              margin: EdgeInsets.symmetric(vertical: 11),
+              height: 110,
+              width: 150,
+              decoration: BoxDecoration(
+                color: Colors.amber
+              ),
+              child: Image.asset(widget.mobileimage, fit: BoxFit.cover,)),
+          ),
+          SizedBox(height: 15,),
           Text("Model: ${widget.name}",
           style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),),
-           SizedBox(height: 5,),
+           SizedBox(height: 15,),
           Text("Price: ${widget.price}", style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),)
       ]),
     );

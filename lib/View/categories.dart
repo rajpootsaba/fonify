@@ -48,7 +48,9 @@ class _CategoriesState extends State<Categories> {
             Expanded(child: 
             
             
-            GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               
               crossAxisCount: 4, crossAxisSpacing: 5, childAspectRatio: 1, mainAxisSpacing: 5),
             

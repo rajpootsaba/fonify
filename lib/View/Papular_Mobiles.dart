@@ -91,6 +91,7 @@ class _PapularMobilesState extends State<PapularMobiles> {
             ),
             Expanded(
               child: GridView.builder(
+                shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3,
                 crossAxisSpacing: 5,
                 childAspectRatio: 0.6,

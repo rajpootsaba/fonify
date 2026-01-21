@@ -9,6 +9,7 @@ import 'package:fonify/View/Custom_container2.dart';
 import 'package:fonify/View/Papular_Mobiles.dart';
 import 'package:fonify/View/cart_page.dart';
 import 'package:fonify/View/categories.dart';
+import 'package:fonify/View/review_carosel.dart';
 import 'package:fonify/View/scan_page.dart';
 import 'package:fonify/View/settings_page.dart';
 import 'package:fonify/View/viewall_categories.dart';
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: AppColors.background,
       extendBody: true, 
       appBar: AppBar(
-        toolbarHeight: 50,
+        // toolbarHeight: 40,
         backgroundColor: AppColors.appBar,
         title: Row(
           children: [
@@ -79,14 +80,15 @@ class HomeScreen extends StatelessWidget {
         // 🔹 If Home tab is selected
         if (bottomController.currentIndex.value == 0) {
           return SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
                 // ===== Buy & Sell Section =====
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-                  height: 200,
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                  height: 140,
                   color: AppColors.Container,
                   child: Column(
                     children: [
@@ -96,29 +98,37 @@ class HomeScreen extends StatelessWidget {
                             "Buy & Sell\nMobile Easily",
                             style: TextStyle(
                               color: AppColors.textPrimary,
-                              fontSize: 25,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           Spacer(),
-                          Container(
-                            height: 100,
-                            width: 100,
-                            child: Image.asset(
-                              "assets/images/4.jfif",
-                              fit: BoxFit.contain,
+                          Expanded(
+                            child: Container(
+                              // color: const Color.fromRGBO(244, 67, 54, 1),
+                              height: 70,
+                              width: 90,
+                              child: Image.asset(
+                                "assets/images/4.jfif",
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 5),
+                      Row(
+                        children: [
+                          Text('The future of AI will see home robots having enhanced\nintelligence, increased, and becoming more\n personal possibly cute. For example home robots\n will overcome navigation direction.', textAlign: TextAlign.justify,style: TextStyle(color: Colors.white, fontSize: 5),),
+                        ],
+                      ),
+                      SizedBox(height: 3),
                       Row(
                         children: [BuySellButtons()],
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 3),
 
                 // ===== Categories Section =====
                 Container(
@@ -126,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                         child: Row(
                           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -166,9 +176,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 90,
+                        height: 85,
                         child: Obx(() {
                           return ListView.builder(
+                            shrinkWrap: true,
                             controller: companyController.logoScrollController,
                             scrollDirection: Axis.horizontal,
                             itemCount: companyController.logoList.length,
@@ -184,7 +195,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 10),
+                SizedBox(height: 2),
 
                 // ===== Popular Mobiles Section =====
                 Container(
@@ -192,7 +203,7 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        padding: const EdgeInsets.symmetric(horizontal: 10, ),
                         child: Row(
                           children: [
                             Text(
@@ -230,9 +241,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 110,
+                        height: 105,
                         child: Obx(() {
                           return ListView.builder(
+                            shrinkWrap: true,
                             controller: companyController.mobileScrollController,
                             scrollDirection: Axis.horizontal,
                             itemCount: companyController.mobileList.length,
@@ -251,6 +263,8 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(height: 2,),
+                ReviewCarousel()
 
               ],
             ),

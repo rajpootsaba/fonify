@@ -15,6 +15,7 @@ class AppColors {
   static const Color buttonColor = const Color.fromARGB(255, 19, 63, 141);
   static const Color containerColor = Colors.black;
   static const Color arrowColor = Colors.white;
+  static const Color ReviewCarousel = Color(0xFFEEEEEE);
 
   // Text Colors
   static const Color textPrimary = Colors.white;
