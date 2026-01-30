@@ -17,12 +17,18 @@ class AppColors {
   static const Color arrowColor = Colors.white;
   static const Color ReviewCarousel = Color(0xFFEEEEEE);
 
+static const Color loginBackground = Colors.white;
   // Text Colors
   static const Color textPrimary = Colors.white;
   static const Color textSecondary = Colors.white;
   static const Color textAccent = Colors.black;
   static const Color textHeading = Colors.black;
   static const Color textViewAll = Colors.white;
+  static const Color textLogin = Colors.black;
+  static const Color textWelcom = Color.fromARGB(255, 167, 162, 162);
+  static const Color leftDivider = Color.fromARGB(255, 223, 216, 216);
+  static const Color rightDivider = Color.fromARGB(255, 223, 216, 216);
+  static const Color textOR = Color.fromARGB(255, 223, 216, 216);
 
   // Button Colors;
   static const Color buyNormal = Color(0xFF4C4F5E);

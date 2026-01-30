@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fonify/View/homeScreen.dart';
+import 'package:fonify/View/login_page.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
        debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginPage(),
     );
   }
 }
