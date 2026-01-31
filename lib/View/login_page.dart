@@ -19,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.loginBackground,
         automaticallyImplyLeading: true,
         leading: Icon(Icons.arrow_back),
       ),
@@ -28,11 +29,12 @@ class _LoginPageState extends State<LoginPage> {
         child: Padding(padding: EdgeInsets.symmetric(vertical: 10, ),
         child: Center(
           child: Column(
+          
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(mainAxisAlignment: MainAxisAlignment.center,children: [Text("Log in to Market Place", style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textLogin),)],),
+              Row(mainAxisAlignment: MainAxisAlignment.center,children: [Text("Log in to Market Place", style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textLogin, fontSize: 20),)],),
               SizedBox(height: 5,),
-              Row(mainAxisAlignment: MainAxisAlignment.center,children: [Text('Welcome back! Sign in using your social\n account or email to continure us', style: TextStyle(color: AppColors.textWelcom),)],),
+              Row(mainAxisAlignment: MainAxisAlignment.center,children: [Text('Welcome back! Sign in using your social\n      account or email to continure us', style: TextStyle(color: AppColors.textWelcom, fontSize: 14),)],),
               SizedBox(height: 15,),
               SocialLoginButtons(
                 onFacebookTap: controller.loginWithFacebook,
@@ -103,6 +105,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: TextFormField(
                   controller: controller.passwordController,
                   keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: UnderlineInputBorder(borderSide: BorderSide(color: Color.fromARGB(255, 223, 216, 216))),
@@ -118,7 +122,10 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                    },
                    onChanged: (_){
-                    setState((){ isFormValid = _formKey.currentState!.validate();});
+                    if(mounted){
+                        setState((){ isFormValid = _formKey.currentState!.validate();});
+                    }
+                  
                    },
                 
                 ),
@@ -135,12 +142,12 @@ class _LoginPageState extends State<LoginPage> {
                   ? const Color.fromARGB(255, 15, 134, 124)
                   : Colors.grey.shade100,
                   borderRadius: BorderRadius.circular(12),),
-                  child: Text("Log in", style: TextStyle(color: Colors.white),),)),
+                  child: Text("Log in", style: TextStyle(color: isFormValid ? Colors.white : Colors.black),),)),
               ),
               SizedBox(height: 5,),
                Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Center(child: Text('Forgor Password', style: TextStyle(color: const Color.fromARGB(255, 15, 134, 124) ),))],
+                  children: [Center(child: Text('Forgor Password?', style: TextStyle(color: const Color.fromARGB(255, 15, 134, 124) ),))],
                 ),
               
                 

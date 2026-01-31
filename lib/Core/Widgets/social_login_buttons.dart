@@ -65,8 +65,8 @@ class _SocialLoginButtonsState extends State<SocialLoginButtons> {
         child: Center(
           child: Image.asset(
             imagePath,
-            height: 40,
-            width: 40,
+            height: 60,
+            width: 60,
             fit: BoxFit.contain,
           ),
         ),
